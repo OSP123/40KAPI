@@ -1,0 +1,93 @@
+{{!-- <div class="container-fluid" id="login_container">
+    <div class="row" id="background">
+       <div class="col-md-12" id="login_header">
+					<p>
+						{{#unless logged_in}}
+							<a href="/users/signup-signin">Sign In or Sign Up</a>
+						{{/unless}}
+
+						{{#if logged_in}}
+							<div>
+								<p>Welcome {{email}}! </p>
+								<p>You are user {{user_id}}.</p>
+								<a href="/characters"><button id="choose_character">Choose your Character!</button></a>
+							</div>
+						{{/if}}
+					</p>
+				</div>
+		</div>        
+</div>
+ --}}
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    {{> nav }}
+    {{> login-modal }}
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class='container'>
+                <div class='row'>
+                  <div class='col-md-3'></div>
+                  <div id="title-container" class='col-md-6'>
+                    <h1>40K Character Lookup Tool</h1>
+                    <p class='lead'>A very simple tool for looking up rules for 40k Characters</p>
+                    <h2>Choose a Faction</h2>
+                  </div>
+                  <div class='col-md-3'></div>
+                </div>
+              </div>
+                <div class="dropdown">
+                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Faction
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a>Aeldari - Drukhari</a></li>
+                    <li><a>Aeldari - FW Corsairs</a></li>
+                    <li><a>Aeldari - Harlequins</a></li>
+                    <li><a>Aeldari - Ynnari</a></li>
+                    <li><a>Chaos - Chaos Space Marines</a></li>
+                    <li><a>Chaos - Daemons</a></li>
+                    <li><a>Chaos - Dark Mechanicum</a></li>
+                    <li><a>Chaos - Death Guard</a></li>
+                    <li><a>Chaos - FW Heretic Astartes</a></li>
+                    <li><a>Chaos - FW Renegade and Heretics</a></li>
+                    <li><a>Chaos - Questor Traitoris</a></li>
+                    <li><a>Chaos - Thousand Sons</a></li>
+                    <li><a>Chaos - Titanicus Traitoris</a></li>
+                    <li><a>Imperium - Adeptus Astra Telepathica</a></li>
+                    <li><a>Imperium - Adeptus Custodes</a></li>
+                    <li><a>Imperium - Adeptus Mechanicus</a></li>
+                    <li><a>Imperium - Adeptus Ministorum</a></li>
+                    <li><a>Imperium - Adeptus Titanicus</a></li>
+                    <li><a>Imperium - Astra Militarum</a></li>
+                    <li><a>Imperium - Blood Angels</a></li>
+                    <li><a>Imperium - Dark Angels</a></li>
+                    <li><a>Imperium - Deathwatch</a></li>
+                    <li><a>Imperium - FW Adeptus Astartes</a></li>
+                    <li><a>Imperium - FW Death Korps of Krieg</a></li>
+                    <li><a>Imperium - FW Elysians</a></li>
+                    <li><a>Imperium - Grey Knights</a></li>
+                    <li><a>Imperium - Inquisition</a></li>
+                    <li><a>Imperium - Legion of the Damned</a></li>
+                    <li><a>Imperium - Officio Assassinorum</a></li>
+                    <li><a>Imperium - Questor Imperialis</a></li>
+                    <li><a>Imperium - Sisters of Silence</a></li>
+                    <li><a>Imperium - Space Marines</a></li>
+                    <li><a>Imperium - Space Wolves</a></li>
+                    <li><a>Necrons</a></li>
+                    <li><a>Orks</a></li>
+                    <li><a>T'au Empire</a></li>
+                    <li><a>Tyranids - Genestealer Cults</a></li>
+                    <li><a>Tyranids</a></li>
+                    <li><a>Warhammer 40,000 8th Edition</a></li>
+                  </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; Your Website 2016</p>
+        </div>
+    </footer>
