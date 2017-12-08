@@ -1,27 +1,15 @@
 // Dependencies
 // ============
-var flash 				 = require('connect-flash');
 var express        = require('express');
 var path           = require('path');
 var logger         = require('morgan');
-var cookieParser   = require('cookie-parser'); // for working with cookies
 var bodyParser     = require('body-parser');
-var session        = require('express-session'); 
-var methodOverride = require('method-override'); // for deletes in express
-var passport 			 = require("./config/passport");
-var config				 = require("./config/extra-config");
 // Express settings
 // ================
 
 // instantiate our app
 var app            = express();
 
-// override POST to have DELETE and PUT
-app.use(methodOverride('_method'));
-
-//allow sessions
-// app.use(session({ secret: 'booty Mctootie', cookie: { maxAge: 60000 }}));
-// app.use(cookieParser());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -33,22 +21,9 @@ app.engine('handlebars', exphbs({
 }));
 app.set('view engine', 'handlebars');
 
-var isAuth 				 = require("./config/middleware/isAuthenticated");
-var authCheck 		 = require('./config/middleware/attachAuthenticationStatus');
-
-// uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
-app.use(logger('dev'));
-app.use(flash());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use(session({ secret: config.sessionKey, resave: true, saveUninitialized: true }));
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(authCheck);
 
 
 require('./routes')(app);
